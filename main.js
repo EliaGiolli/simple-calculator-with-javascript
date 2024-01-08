@@ -1,17 +1,24 @@
-//get the numbers from the imput and display them
-document.addEventListener("DOMContentLoaded", function () {
-    const display = document.getElementById("display");
+// Get the input display element
+const display = document.getElementById("display");
 
-    window.appendToDisplay = function(input) {
-      display.value += input;
-    }
+// Function to append a value to the display
+function appendToDisplay(value) {
+  display.value += value;
+}
 
-    window.calculate = function() {
-    
-        display.value = eval(display.value);
-    }
+// Function to calculate the result
+function calculate() {
+  // Get the current value of the display
+  const expression = display.value;
+  
+  // Use eval() to evaluate the expression and get the result
+  const result = eval(expression);
+  
+  // Set the display value to the result
+  display.value = result;
+}
 
-    window.clearDisplay = function() {
-      display.value = '';
-    }
-  });
+// Function to clear the display
+function clearDisplay() {
+  display.value = "";
+}
